@@ -1,0 +1,204 @@
+:root {
+    --delay: 0s;
+    --sidebar-width: 220px;
+    --color-data-up: #00c288;
+    --color-data-down: #dc3545;
+    --color-dark: #212529;
+    --preset-1: rgb(13, 110, 253);
+}
+body.crypt-dark {
+    --color-primary-50: #f9fafb;
+    --color-primary-100: #f3f4f6; /*--primary text, level text --*/
+    --color-primary-200: #e5e7eb;
+    --color-primary-300: #d1d5db; /*--table text, thead text --*/
+    --color-primary-400: #9ca3af;
+    --color-primary-500: #6b7280; /*--thead text, form-select text, info text --*/
+    --color-primary-600: #4b5563;
+    --color-primary-700: #374151; /*--meta --*/
+    --color-primary-800: #1f2937;
+    --color-primary-900: #111827;
+    --color-primary-950: #030712;
+    --dl-reverse: #ffffff; /*--This function inverts the color of background section.  --*/
+
+    --brand-color: #facc15;
+    --brand-hover-color: #eab308;
+    --brand-hover-bg: hsla(0, 0%, 100%, 0.020);
+
+    --card-color: #121212; /*--all card --*/
+    --border-color: #ffffff0c; /*--card border color --*/
+    --color-bg: #06090b; /*--template background --*/
+    --tab-bg-color: #030507; /*--all tab background color --*/
+    --color-input-field: #1b1b1b; /*--search, input box --*/
+}
+body.crypt-light {
+    --color-primary-50: #030712;
+    --color-primary-100: #111827; /*--primary text, level text --*/
+    --color-primary-200: #1f2937;
+    --color-primary-300: #374151; /*--table text, thead text --*/
+    --color-primary-400: #4b5563;
+    --color-primary-500: #6b7280; /*--thead text, form-select text, info text --*/
+    --color-primary-600: #9ca3af;
+    --color-primary-700: #d1d5db; /*--meta --*/
+    --color-primary-800: #e5e7eb;
+    --color-primary-900: #f3f4f6;
+    --color-primary-950: #f9fafb;
+    --dl-reverse: #121212; /*--This function inverts the color of background section.  --*/
+
+    --brand-color: #facc15;
+    --brand-hover-color: #eab308;
+    --brand-hover-bg: hsl(210, 17%, 95%);
+
+    --card-color: #ffffff; /*--all card --*/
+    --border-color: #00000013; /*--card border color --*/
+    --color-bg: #f1f3f5; /*--template background --*/
+    --tab-bg-color: #f3f4f6; /*--all tab background color --*/
+    --color-input-field: #f1f3f5; /*--search, input box --*/
+}
+
+
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@layer normalize foundation;
+
+@layer attributes {
+
+	.attributes {
+		position: absolute;
+		top: 80%;
+		left: 40%;
+		z-index: 1;
+	}
+	.attribute {
+		--font-size: 2rem;
+		--hue: 10;
+		--ox: 0;
+		--oy: 0;
+		--dx: 0;
+		--dy: 0;
+		--or: 0;
+		--dr: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: var(--font-size);
+		border: 1px solid hsl(var(--hue) 100% 80%);
+		padding: 8px 14px !important;
+		border-radius: 14px;
+		position: absolute;
+		bottom: 0%;
+		left: 0%;
+		translate: 0% 0%;
+		background: #000000;
+		color: hsl(var(--hue) 100% 40% / 0.8);
+		box-shadow: 1px -1px 0.5rem 0rem hsl(var(--hue) 100% 30%) inset;
+		transform: translate(var(--ox), var(--oy)) rotate(var(--or))
+	}
+
+	.attribute:nth-of-type(1) {
+		--hue: 10;
+		--ox: 10%;
+		--oy: 0%;
+		--or: 7deg;
+	}
+	.attribute:nth-of-type(2) {
+		--hue: 60;
+		--ox: 10%;
+		--oy: -5%;
+		--or: 12deg;
+	}
+	.attribute:nth-of-type(3) {
+		--hue: 180;
+		--ox: -20%;
+		--oy: -23%;
+		--or: -10deg;
+	}
+	.attribute:nth-of-type(4) {
+		--hue: 120;
+		--ox: -13%;
+		--oy: 6%;
+		--or: 15deg;
+	}
+	.attribute:nth-of-type(5) {
+		--hue: 210;
+		--ox: -21%;
+		--oy: 18%;
+		--or: 10deg;
+	}
+	.attribute:nth-of-type(6) {
+		--hue: 280;
+		--ox: 15%;
+		--oy: 5%;
+		--or: -8deg;
+	}
+
+	.attribute svg {
+		width: var(--font-size);
+		stroke-width: 2;
+	}
+}
+
+.gsap-text {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+.gsap-text.meme {
+	position: relative;
+	width: 100%;
+	height: auto;
+  }
+.gsap-text .scroll {
+  width: 100%;
+  display: flex;
+}
+.gsap-text .scroll div {
+  color: var(--brand-color);
+  font-size: 4em;
+  font-weight: 900;
+  white-space: nowrap;
+  text-transform: uppercase;
+  animation: animate 40s linear infinite;
+  animation-delay: -40s;
+}
+.gsap-text .scroll div:nth-child(2) {
+  animation: animate2 40s linear infinite;
+  animation-delay: -20s;
+}
+.gsap-text .scroll div span {
+  -webkit-text-stroke: 2px var(--card-color);
+  color: transparent;
+}
+@keyframes animate {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes animate2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+.gsap-text .scroll.text1 {
+  transform: rotate(2deg) translateY(200px) translateX(-200px);
+}
+.gsap-text .scroll.text2 {
+	transform: none;
+	padding-top: 20px;
+}
+.gsap-text .scroll.text3 div{
+	font-size: 20px;
+	white-space: nowrap;
+  text-transform: uppercase;
+}
+.gsap-text .scroll.text3 div span {
+	-webkit-text-stroke: 1.2px #000000;
+	color: transparent;
+.meme-chart { margin: -.5em auto; text-align:center; width: 90%; height: 390px }
+
+}

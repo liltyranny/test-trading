@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>CFT PROP TRADING</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/button.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/icon" href="./images/favicon.ico">
+</head>
+
+<body class="crypt-dark log-bg">
+
+    <!-- Header -->
+    <header class="crypt-header blur-header align-items-center fixed-top z-3">
+        <div class="row align-items-center justify-content-between">
+
+            <!-- main menu -->
+            <div class="col-auto d-flex flex-row align-items-center">
+
+                <!-- Logo -->
+                <div class="crypt-logo dark">
+                    <a href="index.html">
+                        <img src="./images/logo-dark.png" alt=""> <!--dark logo -->
+                    </a>
+                </div>
+                <div class="crypt-logo light">
+                    <a href="index.html">
+                        <img src="./images/logo.png" alt=""> <!-- light logo -->
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- secondary menu -->
+            <div class="col-auto d-flex flex-row align-items-center">
+                <div class="user-settings gap-2 gap-sm-3">
+
+                    <!-- dark/light mode -->
+                    <div class="mode">
+                        <button class="controller m-auto" id="darkMode">
+                            <span class="dark-logo">
+                                <svg viewBox="0 0 512 512" width="100" fill="currentColor">
+                                    <path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z" />
+                                </svg>
+                            </span>
+                            <span class="light-logo">
+                                <svg viewBox="0 0 512 512" width="100" fill="currentColor">
+                                    <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Signup Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="crypt-login-form mt-5">
+                <div class="d-flex mb-4">
+                    <h3 class="fw-bold">Create Account</h3>
+                </div>
+                <form class="needs-validation" action="#!" name="password_strength" id="pass_form" novalidate>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex flex-column mb-3">
+                            <label for="email" class="form-label text-light">Email/Phone Number <span class="crypt-grayscale-600">*</span></label>
+                            <input type="email" class="form-control py-2 mb-0" name="email" id="email" placeholder="name@example.com" required>
+                            <div class="invalid-feedback mt-0">This field is required.</div>
+                        </div>
+                        <div class="d-flex flex-column mb-3">
+                            <label for="password" class="form-label text-light">Password <span class="crypt-grayscale-600">*</span></label>
+                            <div class="input-group-append">
+                                <input type="password" class="form-control form-controls py-2" name="password" id="password" value="" placeholder="Enter a password" autocomplete="off" required>
+                                <div class="eye fright"><i class="fa fa-eye" id="eye" onclick="toggle()"></i></div>
+                                <span id="passstrength"></span>
+                                <div class="text-muted crypt-grayscale-600 text-sm">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me" required>
+                                <label class="form-check-label text-secondary" for="remember_me">
+                                    I have read and agree to the <a href="#!" class="link-primary fw-bold mb-0">Terms of Use</a>.
+                                </label>
+                                <div class="invalid-feedback mt-0"> You must agree before submitting.</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary rounded-pill text-center mt-4" type="submit">Create Account</button>
+                    </div>
+                </form>
+                <div class="d-flex flex-column">
+                    <div class="divider" role="separator">
+                        <span class="crypt-grayscale-500 p-2">or</span>
+                    </div>
+                    <a href="#!" class="d-flex justify-content-between align-items-center button btn btn-outline-secondary" data-bs-toggle="button">Sign in with Google
+                        <img alt="" width="32" src="images/icon/google.svg">
+                    </a>
+                    <a href="#!" class="d-flex justify-content-between align-items-center button btn btn-outline-secondary mt-3" data-bs-toggle="button">Sign in with Apple
+                        <img alt="" width="32" src="images/icon/apple.svg">
+                    </a>
+                </div>
+                <div class="d-flex flex-row gap-2 mt-4 justify-content-center">
+                    <p class="crypt-grayscale-500">Already have an account?</p>
+                    <a href="login.html" class="link-primary fw-bold">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="container-fluid text-left text-lg-start animation-element">
+        <div class="container in-view">
+            <!-- Link -->
+            <div class="d-flex justify-content-center gap-4 crypt-footer-copyright border-0 mb-3 mt-3">
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Docs
+                </a>
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Cookies
+                </a>
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Terms
+                </a>
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Privacy
+                </a>
+            </div>
+      </div>
+    
+    </footer>
+    
+    <!-- Main Content End -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" ></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
